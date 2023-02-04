@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     >
 
-    <title>Телефонный справочник</title>
+    <title>Телефонный справочник </title>
   </head>
   <body>
     {% load crispy_forms_tags %}
@@ -23,7 +23,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}">Телефонный справочник</a>
-          <button
+         <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -50,7 +50,7 @@
           </div>
         </div>
       </nav>
-      <h1> Удалить контакт?</h1>
+      <h1> Удалить контакт {{object.name}}?</h1>
       <form action="" method="post">
         {% csrf_token %}
         <button type ="submit" class="btn btn-danger">Удалить</button>

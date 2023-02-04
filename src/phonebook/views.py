@@ -24,6 +24,7 @@ class AddPhoneFormView(CreateView):
             models.Phone.objects.create(
                 phone=phone_number, contact=self.object)
         return super().get_success_url()
+
 class DeletePhoneFormView(DeleteView):
     model = models.Persone
     template_name = 'phonebook/delete_persone.html'

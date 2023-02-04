@@ -46,16 +46,54 @@
         </div>
       </nav> 
       <div class="card">
+        <div class="cart-body">
+            <h5 class="cart-title">Поиск контактов</h5>
+            <p class="cart-text">
+                <div class="row">
+                    <div class="col-6">
+                        <form action="" method="get">
+                            <div class="form-group form row">
+                                <div class="col-10">
+                                    <input type="text" class="form-control" name="query" placeholder="Поиск по имени">
+                                    <input type="hidden" name="search_by" value="name">
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" class ="btn btn-success">Поиск</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form action="" method="get">
+                            <div class="form-group form row">
+                                <div class="col-10">
+                                    <input type="text" class="form-control" name="query" placeholder="Поиск по номеру телефона">
+                                    <input type="hidden" name="search_by" value="phone">
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" class ="btn btn-success">Поиск</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </p>
+        </div>
+      </div>
+      <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Телефон</h5>
-            <h6 class="card-subtitle">Какой-нибудь текст</h6>
+            <h5 class="card-title">Телефоны</h5>
+            <h6 class="card-subtitle">{{search_message}}</h6>
             <p class="card-text">
                 <table class="table">
                     <thead>
                         <tr>
                            <th scope= "col">#</th> 
                            <th scope= "col">Имя</th> 
-                           <th scope= "col">Телефон</th> 
+                           <th scope= "col">Телефон</th>
+                           <th scope= "col">Электронная почта</th>  
                            <th scope= "col">Actions</th> 
                         </tr>
                     </thead>
@@ -65,6 +103,7 @@
                             <th scrope ="row">{{ persone.pk }}</th>
                             <th>{{ persone.name }}</th>
                             <th>{{ persone.all_phones_to_string }}</th>
+                            <th>{{ persone.all_email_to_string }}</th>
                             <th><a href="{% url 'delete' persone.pk %}" class="btn btn-sm btn-danger">Удалить</a></th>
                         </tr>
                         {% endfor %}

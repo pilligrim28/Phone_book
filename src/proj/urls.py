@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from phonebook import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('add/', views.AddPhoneFormView.as_view(), name="add"),
+    path('delete/<int:pk>', views.DeletePhoneFormView.as_view(), name="delete"),
+    path('', views.HomePageView.as_view(), name="home")
 ]
